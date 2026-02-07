@@ -1,0 +1,135 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#0F0A0A">
+    <meta name="mobile-web-app-capable" content="yes">
+    <title>Digital Krishna</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@200;300;400;600;700&family=Poppins:wght@100;200;300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --my-krishna-pink: #C2185B;
+            --bg-dark: #0F0A0A;
+            --glass-bg: rgba(30, 20, 20, 0.92);
+            --glass-border: rgba(255, 255, 255, 0.15);
+        }
+
+        * {
+            -webkit-tap-highlight-color: transparent;
+            user-select: none;
+            box-sizing: border-box;
+        }
+
+        input, textarea {
+            user-select: text;
+        }
+
+        html, body {
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: var(--bg-dark);
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: white;
+            height: 100dvh;
+            width: 100vw;
+            overscroll-behavior: none;
+            touch-action: pan-y;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .mukta { font-family: 'Mukta', sans-serif; }
+        
+        .glass-panel {
+            background: var(--glass-bg);
+            backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
+            border: 1px solid var(--glass-border);
+        }
+
+        .chat-background {
+            position: fixed;
+            inset: 0;
+            background-color: #0F0A0A;
+            background-image: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('https://images.unsplash.com/photo-1534796636912-3b95b3ab5986?q=80&w=2000&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            z-index: -1;
+        }
+
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+        .btn-magenta {
+            background-color: var(--my-krishna-pink);
+            box-shadow: 0 8px 30px rgba(194, 24, 91, 0.35);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            color: white;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+            touch-action: manipulation;
+        }
+        
+        .btn-magenta:active {
+            filter: brightness(0.8);
+            transform: scale(0.96);
+            box-shadow: 0 4px 15px rgba(194, 24, 91, 0.2);
+        }
+
+        @keyframes pulse-glow {
+            0% { box-shadow: 0 0 15px rgba(194, 24, 91, 0.1); }
+            50% { box-shadow: 0 0 45px rgba(194, 24, 91, 0.35); }
+            100% { box-shadow: 0 0 15px rgba(194, 24, 91, 0.1); }
+        }
+
+        .divine-glow {
+            animation: pulse-glow 5s infinite ease-in-out;
+        }
+
+        /* Responsive adjustments for narrow screens */
+        @media screen and (max-width: 380px) {
+            .shloka-text { font-size: 1.25rem !important; }
+            .shloka-translation { font-size: 0.875rem !important; }
+            .chat-bubble-text { font-size: 0.9375rem !important; }
+        }
+
+        /* Fix for Android soft keyboard: Hide non-essential large elements when screen height shrinks */
+        @media screen and (max-height: 550px) {
+            .hide-on-keyboard {
+                display: none !important;
+            }
+        }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.4",
+    "react-dom": "https://esm.sh/react-dom@^19.2.4",
+    "react-dom/client": "https://esm.sh/react-dom@^19.2.4/client",
+    "framer-motion": "https://esm.sh/framer-motion@^12.31.0",
+    "@google/genai": "https://esm.sh/@google/genai@^1.39.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "react/": "https://esm.sh/react@^19.2.4/"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body>
+    <div class="chat-background"></div>
+    <div id="root"></div>
+    <script type="module" src="./index.tsx"></script>
+<script type="module" src="/index.tsx"></script>
+</body>
+</html>

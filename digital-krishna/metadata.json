@@ -1,0 +1,7 @@
+{
+  "name": "Digital Krishna",
+  "description": "A digital companion providing the wisdom of Lord Krishna from the Bhagavad Gita using advanced AI.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}
